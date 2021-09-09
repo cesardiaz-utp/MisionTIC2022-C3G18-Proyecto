@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduccion a vue</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="app" class="container alert-primary">
+        Contador: {{ contador }}<br>
+        Mensaje: {{ mensaje }}
+    </div>
+
+    <div id="evento" class="container alert-success">
+        <p>{{mensaje}}</p>
+        <button v-on:click="invertirMensaje()">Invertir cadena</button>
+    </div>
+
+    <div id="enlace" class="container alert-warning">
+        <p> {{ mensaje }}</p>
+        <input v-model="mensaje">
+        <input placeholder="Correo Electronico" v-model="correo">
+    </div>
+
+    <div id="condiciones" class="container alert-success">
+        <span v-if="esVisible">Ahora me ves</span>
+        <button v-on:click="cambiarValor()" class="btn btn-primary">cambiarValor</button>
+    </div>
+
+    <div id="lista" class="container alert-primary">
+        <div class="row">
+            <input v-model="elemento" type="text" class="form-control col">
+            <button type="button" class="btn btn-primary col-3" v-on:click="agregar()">Agregar</button>
+        </div>
+        <table class="table table-striped" v-if="elementos.length > 0">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tarea</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="dato in elementos">
+                <td>{{dato.id}}</td>
+                <td>{{dato.texto}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </di>
+
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="js/introvue.js"></script>
+</body>
+
+</html>
